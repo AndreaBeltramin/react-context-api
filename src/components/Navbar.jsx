@@ -25,11 +25,6 @@ export default function Navbar() {
 								Home
 							</NavLink>
 						</li>
-						<li className="nav-item">
-							<Link className="nav-link" to="/posts">
-								Post
-							</Link>
-						</li>
 					</ul>
 				</div>
 			</div>
