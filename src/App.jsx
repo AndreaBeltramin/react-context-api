@@ -2,19 +2,21 @@ import DefaultLayout from "./layouts/DefaultLayout";
 
 // import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import ListPostPage from "./pages/ListPostPage";
+import PostsPage from "./pages/PostsPage";
+
+import { PostProvider } from "./contexts/PostContext";
 
 function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route Component={DefaultLayout}>
-					<Route path="/" Component={HomePage} />
-					<Route path="/posts" Component={ListPostPage} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
+		<PostProvider>
+			<BrowserRouter>
+				<Routes>
+					<Route Component={DefaultLayout}>
+						<Route path="/" Component={PostsPage} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
+		</PostProvider>
 	);
 }
 
